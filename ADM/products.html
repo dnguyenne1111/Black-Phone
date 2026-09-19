@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý sản phẩm | BlackPhone Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+<div class="admin-layout">
+    <aside class="admin-sidebar" id="adminSidebar">
+        <div class="admin-logo"><a href="index.html"><i class="bi bi-phone"></i><span>BlackPhone</span></a><small>ADMIN PANEL</small></div>
+        <nav class="admin-menu">
+            <a href="index.html" class="admin-menu-item"><i class="bi bi-grid-1x2-fill"></i><span>Tổng quan</span></a>
+            <a href="products.html" class="admin-menu-item active"><i class="bi bi-phone-fill"></i><span>Sản phẩm</span></a>
+            <a href="categories.html" class="admin-menu-item"><i class="bi bi-grid"></i><span>Danh mục</span></a>
+            <a href="brands.html" class="admin-menu-item"><i class="bi bi-tags-fill"></i><span>Thương hiệu</span></a>
+            <a href="orders.html" class="admin-menu-item"><i class="bi bi-bag-check-fill"></i><span>Đơn hàng</span></a>
+            <a href="users.html" class="admin-menu-item"><i class="bi bi-people-fill"></i><span>Khách hàng</span></a>
+            <a href="posts.html" class="admin-menu-item"><i class="bi bi-newspaper"></i><span>Bài viết</span></a>
+            <div class="admin-menu-divider"></div>
+            <a href="../index.html" target="_blank" class="admin-menu-item"><i class="bi bi-box-arrow-up-right"></i><span>Xem website</span></a>
+        </nav>
+    </aside>
+    <div class="admin-main">
+        <header class="admin-topbar">
+            <div class="admin-topbar-left"><button class="sidebar-toggle" id="sidebarToggle" type="button"><i class="bi bi-list"></i></button><div><h1>Quản lý sản phẩm</h1><p>Quản lý sản phẩm trên website</p></div></div>
+            <div class="admin-topbar-right"><a href="../index.html" class="admin-view-site" target="_blank"><i class="bi bi-eye"></i>Xem website</a><div class="admin-user"><div class="admin-user-avatar"><i class="bi bi-person-fill"></i></div><div><strong>Admin</strong><small>Quản trị viên</small></div></div></div>
+        </header>
+        <main class="admin-content">
+            <section class="admin-page-heading"><div><span>QUẢN LÝ</span><h2>Danh sách sản phẩm</h2><p>Thêm, sửa, xóa và tìm kiếm sản phẩm.</p></div><button type="button" class="admin-primary-btn" id="addProductButton"><i class="bi bi-plus-lg"></i>Thêm sản phẩm</button></section>
+            <section class="admin-panel">
+                <div class="product-admin-toolbar">
+                    <div class="admin-search-box"><i class="bi bi-search"></i><input type="text" id="productSearch" placeholder="Tìm sản phẩm..."></div>
+                    <select id="brandFilterAdmin" class="admin-filter-select"><option value="all">Tất cả thương hiệu</option></select>
+                    <select id="categoryFilterAdmin" class="admin-filter-select"><option value="all">Tất cả danh mục</option></select>
+                </div>
+                <div class="admin-table-info">Tổng: <strong id="productAdminCount">0</strong> sản phẩm</div>
+                <div class="admin-table-wrapper"><table class="admin-table"><thead><tr><th>Ảnh</th><th>Sản phẩm</th><th>Thương hiệu</th><th>Danh mục</th><th>Giá</th><th>Lượt xem</th><th>Thao tác</th></tr></thead><tbody id="adminProductList"></tbody></table></div>
+                <div class="admin-empty d-none" id="adminProductEmpty"><i class="bi bi-phone"></i><p>Không tìm thấy sản phẩm.</p></div>
+            </section>
+        </main>
+    </div>
+</div>
+<div class="admin-sidebar-overlay" id="sidebarOverlay"></div>
+
+<div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+<div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"><div class="modal-content admin-modal">
+<form id="productForm">
+<div class="modal-header"><div><span>SẢN PHẨM</span><h5 class="modal-title" id="productModalTitle">Thêm sản phẩm</h5></div><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+<div class="modal-body"><input type="hidden" id="productId"><div class="row g-3">
+<div class="col-md-6"><label class="admin-form-label" for="productName">Tên sản phẩm</label><input type="text" id="productName" class="admin-form-control" required></div>
+<div class="col-md-3"><label class="admin-form-label" for="productBrand">Thương hiệu</label><select id="productBrand" class="admin-form-control" required></select></div>
+<div class="col-md-3"><label class="admin-form-label" for="productCategory">Danh mục</label><select id="productCategory" class="admin-form-control" required></select></div>
+<div class="col-md-6"><label class="admin-form-label" for="productPrice">Giá bán</label><input type="number" id="productPrice" class="admin-form-control" min="0" required></div>
+<div class="col-md-6"><label class="admin-form-label" for="productOldPrice">Giá cũ</label><input type="number" id="productOldPrice" class="admin-form-control" min="0"></div>
+<div class="col-md-4"><label class="admin-form-label" for="productRam">RAM</label><input type="text" id="productRam" class="admin-form-control" placeholder="12GB" required></div>
+<div class="col-md-4"><label class="admin-form-label" for="productStorage">Bộ nhớ</label><input type="text" id="productStorage" class="admin-form-control" placeholder="256GB" required></div>
+<div class="col-md-4"><label class="admin-form-label" for="productViews">Lượt xem</label><input type="number" id="productViews" class="admin-form-control" min="0" value="0"></div>
+<div class="col-12"><label class="admin-form-label" for="productImageFile">Ảnh sản phẩm</label><div class="admin-image-upload-box"><div class="admin-image-preview" id="productImagePreview"><img src="" alt="Ảnh sản phẩm" class="d-none"><div class="admin-image-placeholder"><i class="bi bi-image"></i><span>Chưa chọn ảnh</span></div></div><div class="admin-image-upload-controls"><input type="file" id="productImageFile" class="admin-file-input" accept="image/png,image/jpeg,image/webp"><small class="admin-form-help">Chọn ảnh JPG, PNG hoặc WEBP từ máy.</small><div class="admin-image-or">hoặc</div><input type="text" id="productImage" class="admin-form-control" placeholder="images/products/iphone.webp" required><small class="admin-form-help">Có thể nhập đường dẫn ảnh nếu không tải ảnh từ máy.</small></div></div></div>
+<div class="col-12"><div class="form-check"><input class="form-check-input" type="checkbox" id="productIsNew"><label class="form-check-label" for="productIsNew">Sản phẩm mới</label></div></div>
+</div></div>
+<div class="modal-footer"><button type="button" class="admin-secondary-btn" data-bs-dismiss="modal">Hủy</button><button type="submit" class="admin-primary-btn"><i class="bi bi-check-lg"></i>Lưu sản phẩm</button></div>
+</form></div></div></div>
+
+<div class="modal fade" id="deleteProductModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content admin-modal"><div class="modal-header"><div><span>XÁC NHẬN</span><h5 class="modal-title">Xóa sản phẩm</h5></div><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><input type="hidden" id="deleteProductId"><p>Bạn có chắc muốn xóa <strong id="deleteProductName"></strong>?</p></div><div class="modal-footer"><button type="button" class="admin-secondary-btn" data-bs-dismiss="modal">Hủy</button><button type="button" class="admin-danger-btn" id="confirmDeleteProduct"><i class="bi bi-trash3"></i>Xóa</button></div></div></div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/data.js"></script>
+<script src="../js/admin/auth.js"></script>
+<script src="../js/admin/products.js"></script>
+</body>
+</html>

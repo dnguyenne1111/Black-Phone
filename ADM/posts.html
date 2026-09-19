@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quản lý bài viết | BlackPhone Admin</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+
+    <div class="admin-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="admin-sidebar" id="adminSidebar">
+
+            <div class="admin-logo">
+
+                <a href="index.html">
+                    <i class="bi bi-phone"></i>
+                    <span>BlackPhone</span>
+                </a>
+
+                <small>ADMIN PANEL</small>
+
+            </div>
+
+
+            <nav class="admin-menu">
+
+                <a href="index.html" class="admin-menu-item">
+                    <i class="bi bi-grid-1x2-fill"></i>
+                    <span>Tổng quan</span>
+                </a>
+
+
+                <a href="products.html" class="admin-menu-item">
+                    <i class="bi bi-phone-fill"></i>
+                    <span>Sản phẩm</span>
+                </a>
+
+
+                <a href="categories.html" class="admin-menu-item">
+                    <i class="bi bi-grid"></i>
+                    <span>Danh mục</span>
+                </a>
+
+
+                <a href="brands.html" class="admin-menu-item">
+                    <i class="bi bi-tags-fill"></i>
+                    <span>Thương hiệu</span>
+                </a>
+
+
+                <a href="orders.html" class="admin-menu-item">
+                    <i class="bi bi-bag-check-fill"></i>
+                    <span>Đơn hàng</span>
+                </a>
+
+
+                <a href="users.html" class="admin-menu-item">
+                    <i class="bi bi-people-fill"></i>
+                    <span>Khách hàng</span>
+                </a>
+
+
+                <a href="posts.html" class="admin-menu-item active">
+                    <i class="bi bi-newspaper"></i>
+                    <span>Bài viết</span>
+                </a>
+
+
+                <div class="admin-menu-divider"></div>
+
+
+                <a href="../index.html" target="_blank" class="admin-menu-item">
+                    <i class="bi bi-box-arrow-up-right"></i>
+                    <span>Xem website</span>
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- MAIN -->
+        <div class="admin-main">
+
+            <header class="admin-topbar">
+
+                <div class="admin-topbar-left">
+
+                    <button class="sidebar-toggle" id="sidebarToggle" type="button">
+                        <i class="bi bi-list"></i>
+                    </button>
+
+
+                    <div>
+
+                        <h1>
+                            Quản lý bài viết
+                        </h1>
+
+                        <p>
+                            Quản lý nội dung bài viết BlackPhone
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-topbar-right">
+
+                    <a href="../index.html" class="admin-view-site" target="_blank">
+                        <i class="bi bi-eye"></i>
+                        Xem website
+                    </a>
+
+
+                    <div class="admin-user">
+
+                        <div class="admin-user-avatar">
+                            <i class="bi bi-person-fill"></i>
+                        </div>
+
+                        <div>
+                            <strong>Admin</strong>
+                            <small>Quản trị viên</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <main class="admin-content">
+
+                <!-- HEADING -->
+                <section class="admin-page-heading">
+
+                    <div>
+
+                        <span>
+                            QUẢN LÝ
+                        </span>
+
+                        <h2>
+                            Danh sách bài viết
+                        </h2>
+
+                        <p>
+                            Thêm, sửa và xóa bài viết hiển thị trên website.
+                        </p>
+
+                    </div>
+
+
+                    <button type="button" class="admin-primary-btn" id="addPostButton">
+                        <i class="bi bi-plus-lg"></i>
+                        Thêm bài viết
+                    </button>
+
+                </section>
+
+
+                <!-- PANEL -->
+                <section class="admin-panel">
+
+                    <div class="product-admin-toolbar">
+
+                        <div class="admin-search-box">
+
+                            <i class="bi bi-search"></i>
+
+                            <input type="text" id="postSearch" placeholder="Tìm bài viết...">
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="admin-table-info">
+
+                        Tổng:
+
+                        <strong id="postAdminCount">
+                            0
+                        </strong>
+
+                        bài viết
+
+                    </div>
+
+
+                    <div class="admin-table-wrapper">
+
+                        <table class="admin-table">
+
+                            <thead>
+
+                                <tr>
+                                    <th>Ảnh</th>
+                                    <th>Tiêu đề</th>
+                                    <th>Mô tả</th>
+                                    <th>Ngày đăng</th>
+                                    <th>Thao tác</th>
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="adminPostList"></tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <div class="admin-empty d-none" id="adminPostEmpty">
+
+                        <i class="bi bi-newspaper"></i>
+
+                        <p>
+                            Không tìm thấy bài viết.
+                        </p>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+    <div class="admin-sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- ADD / EDIT MODAL -->
+    <div class="modal fade" id="postModal" tabindex="-1">
+
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+
+            <div class="modal-content admin-modal">
+
+                <div class="modal-header">
+
+                    <div>
+
+                        <span>
+                            BLACKPHONE ADMIN
+                        </span>
+
+                        <h5 id="postModalTitle">
+                            Thêm bài viết
+                        </h5>
+
+                    </div>
+
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
+                </div>
+
+
+                <form id="postForm">
+
+                    <div class="modal-body">
+
+                        <input type="hidden" id="postId">
+
+
+                        <div class="mb-3">
+
+                            <label class="admin-form-label">
+                                Tiêu đề bài viết
+                            </label>
+
+                            <input type="text" id="postTitle" class="admin-form-control"
+                                placeholder="Nhập tiêu đề bài viết" required>
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <label class="admin-form-label">
+                                Mô tả ngắn
+                            </label>
+
+                            <textarea id="postDescription" class="admin-form-control admin-textarea" rows="4"
+                                placeholder="Nhập mô tả bài viết" required></textarea>
+
+                        </div>
+
+
+                        <div class="row g-3">
+
+                            <div class="col-md-6">
+
+                                <label class="admin-form-label">
+                                    Ảnh bài viết
+                                </label>
+
+                                <div class="admin-image-upload-box">
+
+                                    <div class="admin-image-preview" id="postImagePreview">
+
+                                        <img src="" alt="Ảnh bài viết" class="d-none">
+
+                                        <div class="admin-image-placeholder">
+                                            <i class="bi bi-image"></i>
+                                            <span>Chưa chọn ảnh</span>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="admin-image-upload-controls">
+
+                                        <input type="file" id="postImageFile" class="admin-file-input" accept="image/*">
+
+                                        <input type="text" id="postImage" class="admin-form-control"
+                                            placeholder="Hoặc nhập đường dẫn ảnh" required>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="col-md-6">
+
+                                <label class="admin-form-label">
+                                    Ngày đăng
+                                </label>
+
+                                <input type="date" id="postDate" class="admin-form-control" required>
+
+                            </div>
+
+
+                            <div class="col-12">
+
+                                <label class="admin-form-label">
+                                    Liên kết bài viết
+                                </label>
+
+                                <input type="text" id="postUrl" class="admin-form-control" placeholder="#">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="modal-footer">
+
+                        <button type="button" class="admin-cancel-btn" data-bs-dismiss="modal">
+                            Hủy
+                        </button>
+
+
+                        <button type="submit" class="admin-save-btn">
+                            <i class="bi bi-check-lg"></i>
+                            Lưu bài viết
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- DELETE MODAL -->
+    <div class="modal fade" id="deletePostModal" tabindex="-1">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content admin-modal">
+
+                <div class="modal-body text-center p-4">
+
+                    <div class="delete-warning-icon">
+
+                        <i class="bi bi-trash3"></i>
+
+                    </div>
+
+
+                    <h4>
+                        Xóa bài viết?
+                    </h4>
+
+
+                    <p class="text-muted">
+
+                        Bạn có chắc muốn xóa
+
+                        <strong id="deletePostName"></strong>?
+
+                    </p>
+
+
+                    <input type="hidden" id="deletePostId">
+
+
+                    <div class="d-flex gap-2 justify-content-center">
+
+                        <button type="button" class="admin-cancel-btn" data-bs-dismiss="modal">
+                            Không
+                        </button>
+
+
+                        <button type="button" class="admin-delete-confirm-btn" id="confirmDeletePost">
+                            <i class="bi bi-trash3"></i>
+                            Xóa
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/admin/auth.js"></script>
+    <script src="../js/admin/posts.js"></script>
+
+</body>
+
+</html>

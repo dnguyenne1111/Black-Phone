@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quản lý danh mục | BlackPhone Admin</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+
+    <div class="admin-layout">
+
+        <aside class="admin-sidebar" id="adminSidebar">
+
+            <div class="admin-logo">
+
+                <a href="index.html">
+                    <i class="bi bi-phone"></i>
+                    <span>BlackPhone</span>
+                </a>
+
+                <small>ADMIN PANEL</small>
+
+            </div>
+
+            <nav class="admin-menu">
+
+                <a href="index.html" class="admin-menu-item">
+                    <i class="bi bi-grid-1x2-fill"></i>
+                    <span>Tổng quan</span>
+                </a>
+
+                <a href="products.html" class="admin-menu-item">
+                    <i class="bi bi-phone-fill"></i>
+                    <span>Sản phẩm</span>
+                </a>
+
+                <a href="categories.html" class="admin-menu-item active">
+                    <i class="bi bi-grid"></i>
+                    <span>Danh mục</span>
+                </a>
+
+                <a href="brands.html" class="admin-menu-item">
+                    <i class="bi bi-tags-fill"></i>
+                    <span>Thương hiệu</span>
+                </a>
+
+                <a href="orders.html" class="admin-menu-item">
+                    <i class="bi bi-bag-check-fill"></i>
+                    <span>Đơn hàng</span>
+                </a>
+
+                <a href="users.html" class="admin-menu-item">
+                    <i class="bi bi-people-fill"></i>
+                    <span>Khách hàng</span>
+                </a>
+
+                <a href="posts.html" class="admin-menu-item">
+                    <i class="bi bi-newspaper"></i>
+                    <span>Bài viết</span>
+                </a>
+
+                <div class="admin-menu-divider"></div>
+
+                <a href="../index.html" target="_blank" class="admin-menu-item">
+                    <i class="bi bi-box-arrow-up-right"></i>
+                    <span>Xem website</span>
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+        <div class="admin-main">
+
+            <header class="admin-topbar">
+
+                <div class="admin-topbar-left">
+
+                    <button class="sidebar-toggle" id="sidebarToggle" type="button">
+                        <i class="bi bi-list"></i>
+                    </button>
+
+                    <div>
+                        <h1>Quản lý danh mục</h1>
+                        <p>Quản lý danh mục sản phẩm trên website</p>
+                    </div>
+
+                </div>
+
+                <div class="admin-topbar-right">
+
+                    <a href="../index.html" class="admin-view-site" target="_blank">
+                        <i class="bi bi-eye"></i>
+                        Xem website
+                    </a>
+
+                    <div class="admin-user">
+
+                        <div class="admin-user-avatar">
+                            <i class="bi bi-person-fill"></i>
+                        </div>
+
+                        <div>
+                            <strong>Admin</strong>
+                            <small>Quản trị viên</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <main class="admin-content">
+
+                <section class="admin-page-heading">
+
+                    <div>
+
+                        <span>QUẢN LÝ</span>
+
+                        <h2>Danh sách danh mục</h2>
+
+                        <p>
+                            Thêm, sửa và xóa danh mục hiển thị trên trang chủ.
+                        </p>
+
+                    </div>
+
+                    <button type="button" class="admin-primary-btn" id="addCategoryButton">
+                        <i class="bi bi-plus-lg"></i>
+                        Thêm danh mục
+                    </button>
+
+                </section>
+
+
+                <section class="admin-panel">
+
+                    <div class="product-admin-toolbar">
+
+                        <div class="admin-search-box">
+
+                            <i class="bi bi-search"></i>
+
+                            <input type="text" id="categorySearch" placeholder="Tìm danh mục...">
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="admin-table-info">
+
+                        Tổng:
+                        <strong id="categoryAdminCount">0</strong>
+                        danh mục
+
+                    </div>
+
+
+                    <div class="admin-table-wrapper">
+
+                        <table class="admin-table">
+
+                            <thead>
+
+                                <tr>
+                                    <th>Ảnh</th>
+                                    <th>Tên danh mục</th>
+                                    <th>Slug</th>
+                                    <th>Liên kết</th>
+                                    <th>Thao tác</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="adminCategoryList"></tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <div class="admin-empty d-none" id="adminCategoryEmpty">
+
+                        <i class="bi bi-grid"></i>
+
+                        <p>
+                            Không tìm thấy danh mục.
+                        </p>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+    <div class="admin-sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <div class="modal fade" id="categoryModal" tabindex="-1">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content admin-modal">
+
+                <div class="modal-header">
+
+                    <div>
+
+                        <span>BLACKPHONE ADMIN</span>
+
+                        <h5 id="categoryModalTitle">
+                            Thêm danh mục
+                        </h5>
+
+                    </div>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
+                </div>
+
+
+                <form id="categoryForm">
+
+                    <div class="modal-body">
+
+                        <input type="hidden" id="categoryId">
+
+
+                        <div class="mb-3">
+
+                            <label class="admin-form-label">
+                                Tên danh mục
+                            </label>
+
+                            <input type="text" id="categoryName" class="admin-form-control" placeholder="Ví dụ: iPhone"
+                                required>
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <label class="admin-form-label">
+                                Slug
+                            </label>
+
+                            <input type="text" id="categorySlug" class="admin-form-control" placeholder="Ví dụ: iphone"
+                                required>
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <label class="admin-form-label">
+                                Ảnh danh mục
+                            </label>
+
+                            <div class="admin-image-upload-box">
+
+                                <div class="admin-image-preview" id="categoryImagePreview">
+
+                                    <img src="" alt="Ảnh danh mục" class="d-none">
+
+                                    <div class="admin-image-placeholder">
+                                        <i class="bi bi-image"></i>
+                                        <span>Chưa chọn ảnh</span>
+                                    </div>
+
+                                </div>
+
+                                <div class="admin-image-upload-controls">
+
+                                    <input type="file" id="categoryImageFile" class="admin-file-input" accept="image/*">
+
+                                    <input type="text" id="categoryImage" class="admin-form-control"
+                                        placeholder="Hoặc nhập đường dẫn ảnh" required>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div>
+
+                            <label class="admin-form-label">
+                                Liên kết
+                            </label>
+
+                            <input type="text" id="categoryUrl" class="admin-form-control"
+                                placeholder="products.html?category=iphone" required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="modal-footer">
+
+                        <button type="button" class="admin-cancel-btn" data-bs-dismiss="modal">
+                            Hủy
+                        </button>
+
+                        <button type="submit" class="admin-save-btn">
+                            <i class="bi bi-check-lg"></i>
+                            Lưu danh mục
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="modal fade" id="deleteCategoryModal" tabindex="-1">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content admin-modal">
+
+                <div class="modal-body text-center p-4">
+
+                    <div class="delete-warning-icon">
+
+                        <i class="bi bi-trash3"></i>
+
+                    </div>
+
+                    <h4>
+                        Xóa danh mục?
+                    </h4>
+
+                    <p class="text-muted">
+
+                        Bạn có chắc muốn xóa
+                        <strong id="deleteCategoryName"></strong>?
+
+                    </p>
+
+                    <input type="hidden" id="deleteCategoryId">
+
+
+                    <div class="d-flex gap-2 justify-content-center">
+
+                        <button type="button" class="admin-cancel-btn" data-bs-dismiss="modal">
+                            Không
+                        </button>
+
+                        <button type="button" class="admin-delete-confirm-btn" id="confirmDeleteCategory">
+                            <i class="bi bi-trash3"></i>
+                            Xóa
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="../js/data.js"></script>
+<script src="../js/admin/auth.js"></script>
+<script src="../js/admin/categories.js"></script>
+
+</body>
+</html>

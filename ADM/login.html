@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Đăng nhập Admin | BlackPhone</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+
+    <div class="admin-login-page">
+
+        <div class="admin-login-container">
+
+            <!-- LEFT -->
+            <div class="admin-login-banner">
+
+                <div class="admin-login-brand">
+
+                    <div class="admin-login-logo">
+                        <i class="bi bi-phone"></i>
+                    </div>
+
+                    <h1>BlackPhone</h1>
+
+                    <span>
+                        ADMIN PANEL
+                    </span>
+
+                </div>
+
+
+                <div class="admin-login-banner-content">
+
+                    <h2>
+                        Quản lý cửa hàng
+                        <br>
+                        dễ dàng hơn.
+                    </h2>
+
+                    <p>
+                        Quản lý sản phẩm, đơn hàng,
+                        khách hàng, thương hiệu và
+                        nội dung website tại một nơi.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT -->
+            <div class="admin-login-form-area">
+
+                <div class="admin-login-form-box">
+
+                    <div class="admin-login-heading">
+
+                        <span>
+                            BLACKPHONE ADMIN
+                        </span>
+
+                        <h2>
+                            Đăng nhập quản trị
+                        </h2>
+
+                        <p>
+                            Nhập tài khoản Admin để tiếp tục.
+                        </p>
+
+                    </div>
+
+
+                    <div class="admin-login-alert" id="adminLoginAlert"></div>
+
+
+                    <form id="adminLoginForm">
+
+                        <div class="admin-login-group">
+
+                            <label>
+                                Tài khoản
+                            </label>
+
+                            <div class="admin-login-input">
+
+                                <i class="bi bi-person"></i>
+
+                                <input type="text" id="adminUsername" placeholder="Nhập tài khoản"
+                                    autocomplete="username" required>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="admin-login-group">
+
+                            <label>
+                                Mật khẩu
+                            </label>
+
+                            <div class="admin-login-input">
+
+                                <i class="bi bi-lock"></i>
+
+                                <input type="password" id="adminPassword" placeholder="Nhập mật khẩu"
+                                    autocomplete="current-password" required>
+
+
+                                <button type="button" class="admin-password-toggle" id="adminPasswordToggle">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <button type="submit" class="admin-login-submit">
+
+                            Đăng nhập
+
+                            <i class="bi bi-arrow-right"></i>
+
+                        </button>
+
+                    </form>
+
+
+                    <div class="admin-login-back">
+
+                        <a href="../index.html">
+
+                            <i class="bi bi-arrow-left"></i>
+
+                            Quay lại BlackPhone
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="../js/admin/auth.js"></script>
+
+</body>
+
+</html>

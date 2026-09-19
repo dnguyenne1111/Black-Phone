@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Đăng ký | BlackPhone</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <div class="auth-page">
+
+        <div class="auth-wrapper">
+
+            <div class="auth-banner">
+
+                <a href="index.html" class="auth-logo">
+
+                    <i class="bi bi-phone"></i>
+
+                    <span>
+                        BlackPhone
+                    </span>
+
+                </a>
+
+                <div class="auth-banner-content">
+
+                    <span>
+                        TẠO TÀI KHOẢN
+                    </span>
+
+                    <h1>
+                        Bắt đầu trải nghiệm mua sắm cùng BlackPhone
+                    </h1>
+
+                    <p>
+                        Đăng ký tài khoản để mua hàng nhanh hơn
+                        và quản lý thông tin thuận tiện hơn.
+                    </p>
+
+                    <div class="auth-benefits">
+
+                        <div>
+                            <i class="bi bi-lightning-charge"></i>
+                            <span>Mua hàng nhanh chóng</span>
+                        </div>
+
+                        <div>
+                            <i class="bi bi-box-seam"></i>
+                            <span>Theo dõi đơn hàng</span>
+                        </div>
+
+                        <div>
+                            <i class="bi bi-person-check"></i>
+                            <span>Quản lý thông tin cá nhân</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="auth-form-area">
+
+                <div class="auth-form-box">
+
+                    <a href="index.html" class="auth-back">
+
+                        <i class="bi bi-arrow-left"></i>
+
+                        Về trang chủ
+
+                    </a>
+
+
+                    <div class="auth-heading">
+
+                        <span>
+                            THÀNH VIÊN MỚI
+                        </span>
+
+                        <h2>
+                            Đăng ký
+                        </h2>
+
+                        <p>
+                            Điền thông tin bên dưới để tạo tài khoản.
+                        </p>
+
+                    </div>
+
+
+                    <form id="registerForm">
+
+                        <div class="auth-field">
+
+                            <label for="registerName">
+                                Họ và tên
+                            </label>
+
+                            <div class="auth-input">
+
+                                <i class="bi bi-person"></i>
+
+                                <input type="text" id="registerName" placeholder="Nhập họ và tên" required>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="auth-field">
+
+                            <label for="registerEmail">
+                                Email
+                            </label>
+
+                            <div class="auth-input">
+
+                                <i class="bi bi-envelope"></i>
+
+                                <input type="email" id="registerEmail" placeholder="example@gmail.com" required>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="auth-field">
+
+                            <label for="registerPhone">
+                                Số điện thoại
+                            </label>
+
+                            <div class="auth-input">
+
+                                <i class="bi bi-telephone"></i>
+
+                                <input type="tel" id="registerPhone" placeholder="Nhập số điện thoại" required>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="auth-field">
+
+                            <label for="registerPassword">
+                                Mật khẩu
+                            </label>
+
+                            <div class="auth-input">
+
+                                <i class="bi bi-lock"></i>
+
+                                <input type="password" id="registerPassword" placeholder="Tối thiểu 6 ký tự" minlength="6" required>
+                                
+                                <button type="button" class="toggle-password" data-target="registerPassword">
+
+                                    <i class="bi bi-eye"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="auth-field">
+
+                            <label for="registerConfirmPassword">
+                                Nhập lại mật khẩu
+                            </label>
+
+                            <div class="auth-input">
+
+                                <i class="bi bi-shield-lock"></i>
+
+                                <input type="password" id="registerConfirmPassword" placeholder="Nhập lại mật khẩu"
+                                    required>
+
+                                <button type="button" class="toggle-password" data-target="registerConfirmPassword">
+
+                                    <i class="bi bi-eye"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <label class="remember-login">
+
+                            <input type="checkbox" id="registerAgreement" required>
+
+                            <span>
+                                Tôi đồng ý với điều khoản sử dụng
+                            </span>
+
+                        </label>
+
+
+                        <div id="registerMessage" class="auth-message"></div>
+
+
+                        <button type="submit" class="auth-submit">
+
+                            <span>
+                                Tạo tài khoản
+                            </span>
+
+                            <i class="bi bi-arrow-right"></i>
+
+                        </button>
+
+                    </form>
+
+
+                    <div class="auth-divider">
+                        <span>hoặc</span>
+                    </div>
+
+
+                    <p class="auth-switch">
+
+                        Đã có tài khoản?
+
+                        <a href="login.html">
+                            Đăng nhập
+                        </a>
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/auth.js"></script>
+
+</body>
+
+</html>

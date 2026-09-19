@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | BlackPhone Admin</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="../css/variables.css">
+
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+
+<body>
+
+
+    <div class="admin-layout">
+
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="admin-sidebar" id="adminSidebar">
+
+            <div class="admin-logo">
+
+                <a href="index.html">
+
+                    <i class="bi bi-phone"></i>
+
+                    <span>
+                        BlackPhone
+                    </span>
+
+                </a>
+
+                <small>
+                    ADMIN PANEL
+                </small>
+
+            </div>
+
+
+            <nav class="admin-menu">
+
+
+                <a href="index.html" class="admin-menu-item active">
+
+                    <i class="bi bi-grid-1x2-fill"></i>
+
+                    <span>
+                        Tổng quan
+                    </span>
+
+                </a>
+
+
+                <a href="products.html" class="admin-menu-item">
+
+                    <i class="bi bi-phone-fill"></i>
+
+                    <span>
+                        Sản phẩm
+                    </span>
+
+                </a>
+
+
+                <a href="categories.html" class="admin-menu-item">
+
+                    <i class="bi bi-grid"></i>
+
+                    <span>
+                        Danh mục
+                    </span>
+
+                </a>
+
+
+                <a href="brands.html" class="admin-menu-item">
+
+                    <i class="bi bi-tags-fill"></i>
+
+                    <span>
+                        Thương hiệu
+                    </span>
+
+                </a>
+
+
+                <a href="orders.html" class="admin-menu-item">
+
+                    <i class="bi bi-bag-check-fill"></i>
+
+                    <span>
+                        Đơn hàng
+                    </span>
+
+                    <span class="menu-badge" id="sidebarOrderCount">
+                        0
+                    </span>
+
+                </a>
+
+
+                <a href="users.html" class="admin-menu-item">
+
+                    <i class="bi bi-people-fill"></i>
+
+                    <span>
+                        Khách hàng
+                    </span>
+
+                </a>
+
+
+                <a href="posts.html" class="admin-menu-item">
+
+                    <i class="bi bi-newspaper"></i>
+
+                    <span>
+                        Bài viết
+                    </span>
+
+                </a>
+
+
+                <div class="admin-menu-divider"></div>
+
+
+                <a href="../index.html" class="admin-menu-item" target="_blank">
+
+                    <i class="bi bi-box-arrow-up-right"></i>
+
+                    <span>
+                        Xem website
+                    </span>
+
+                </a>
+
+
+            </nav>
+
+
+            <div class="admin-sidebar-bottom">
+
+                <div class="admin-profile">
+
+                    <div class="admin-avatar">
+
+                        <i class="bi bi-person-fill"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Administrator
+                        </strong>
+
+                        <span>
+                            Quản trị viên
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </aside>
+
+
+
+        <!-- ================= CONTENT ================= -->
+
+        <div class="admin-main">
+
+
+            <!-- ================= TOPBAR ================= -->
+
+            <header class="admin-topbar">
+
+
+                <div class="admin-topbar-left">
+
+                    <button type="button" class="sidebar-toggle" id="sidebarToggle">
+
+                        <i class="bi bi-list"></i>
+
+                    </button>
+
+
+                    <div>
+
+                        <h1>
+                            Tổng quan
+                        </h1>
+
+                        <p>
+                            Chào mừng trở lại BlackPhone Admin
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-topbar-right">
+
+
+                    <a href="../index.html" class="admin-view-site" target="_blank">
+
+                        <i class="bi bi-eye"></i>
+
+                        Xem website
+
+                    </a>
+
+
+                    <button type="button" class="admin-notification">
+
+                        <i class="bi bi-bell"></i>
+
+                        <span></span>
+
+                    </button>
+
+
+                    <div class="admin-user">
+
+                        <div class="admin-user-avatar">
+
+                            <i class="bi bi-person-fill"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Admin
+                            </strong>
+
+                            <small>
+                                Quản trị viên
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </header>
+
+
+
+            <!-- ================= DASHBOARD ================= -->
+
+            <main class="admin-content">
+
+
+                <!-- WELCOME -->
+
+                <section class="admin-welcome">
+
+                    <div>
+
+                        <span class="welcome-label">
+                            BLACKPHONE ADMIN
+                        </span>
+
+                        <h2>
+                            Quản lý cửa hàng của bạn
+                        </h2>
+
+                        <p>
+                            Theo dõi sản phẩm, đơn hàng,
+                            khách hàng và nội dung website
+                            tại một nơi.
+                        </p>
+
+                    </div>
+
+
+                    <a href="products.html" class="admin-primary-btn">
+
+                        <i class="bi bi-plus-lg"></i>
+
+                        Thêm sản phẩm
+
+                    </a>
+
+                </section>
+
+
+
+                <!-- ================= STAT CARDS ================= -->
+
+                <section class="admin-stats">
+
+
+                    <div class="admin-stat-card">
+
+                        <div class="stat-icon stat-blue">
+
+                            <i class="bi bi-phone"></i>
+
+                        </div>
+
+                        <div class="stat-info">
+
+                            <span>
+                                Sản phẩm
+                            </span>
+
+                            <strong id="totalProducts">
+                                0
+                            </strong>
+
+                            <small>
+                                Tổng sản phẩm
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="admin-stat-card">
+
+                        <div class="stat-icon stat-orange">
+
+                            <i class="bi bi-bag-check"></i>
+
+                        </div>
+
+                        <div class="stat-info">
+
+                            <span>
+                                Đơn hàng
+                            </span>
+
+                            <strong id="totalOrders">
+                                0
+                            </strong>
+
+                            <small>
+                                Tổng đơn đã đặt
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="admin-stat-card">
+
+                        <div class="stat-icon stat-green">
+
+                            <i class="bi bi-people"></i>
+
+                        </div>
+
+                        <div class="stat-info">
+
+                            <span>
+                                Khách hàng
+                            </span>
+
+                            <strong id="totalUsers">
+                                0
+                            </strong>
+
+                            <small>
+                                Tài khoản đăng ký
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="admin-stat-card">
+
+                        <div class="stat-icon stat-purple">
+
+                            <i class="bi bi-cash-stack"></i>
+
+                        </div>
+
+                        <div class="stat-info">
+
+                            <span>
+                                Doanh thu
+                            </span>
+
+                            <strong id="totalRevenue">
+                                0đ
+                            </strong>
+
+                            <small>
+                                Tổng giá trị đơn hàng
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                </section>
+
+
+
+                <!-- ================= MAIN GRID ================= -->
+
+                <section class="admin-dashboard-grid">
+
+
+                    <!-- ORDERS -->
+
+                    <div class="admin-panel admin-orders-panel">
+
+
+                        <div class="admin-panel-header">
+
+                            <div>
+
+                                <h3>
+                                    Đơn hàng gần đây
+                                </h3>
+
+                                <p>
+                                    Các đơn hàng mới nhất của khách
+                                </p>
+
+                            </div>
+
+
+                            <a href="orders.html">
+
+                                Xem tất cả
+
+                                <i class="bi bi-arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+
+                        <div class="admin-table-wrapper">
+
+                            <table class="admin-table">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>
+                                            Mã đơn
+                                        </th>
+
+                                        <th>
+                                            Khách hàng
+                                        </th>
+
+                                        <th>
+                                            Tổng tiền
+                                        </th>
+
+                                        <th>
+                                            Trạng thái
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody id="recentOrders">
+
+                                    <!-- JS -->
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+
+                        <div class="admin-empty d-none" id="emptyOrders">
+
+                            <i class="bi bi-inbox"></i>
+
+                            <p>
+                                Chưa có đơn hàng nào
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- QUICK ACTION -->
+
+                    <div class="admin-panel">
+
+
+                        <div class="admin-panel-header">
+
+                            <div>
+
+                                <h3>
+                                    Quản lý nhanh
+                                </h3>
+
+                                <p>
+                                    Truy cập chức năng thường dùng
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="quick-actions">
+
+
+                            <a href="products.html">
+
+                                <div class="quick-action-icon">
+
+                                    <i class="bi bi-phone"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Quản lý sản phẩm
+                                    </strong>
+
+                                    <span>
+                                        Thêm, sửa, xóa sản phẩm
+                                    </span>
+
+                                </div>
+
+                                <i class="bi bi-chevron-right"></i>
+
+                            </a>
+
+
+                            <a href="orders.html">
+
+                                <div class="quick-action-icon">
+
+                                    <i class="bi bi-bag"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Quản lý đơn hàng
+                                    </strong>
+
+                                    <span>
+                                        Kiểm tra đơn khách đặt
+                                    </span>
+
+                                </div>
+
+                                <i class="bi bi-chevron-right"></i>
+
+                            </a>
+
+
+                            <a href="users.html">
+
+                                <div class="quick-action-icon">
+
+                                    <i class="bi bi-person"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Quản lý khách hàng
+                                    </strong>
+
+                                    <span>
+                                        Xem và quản lý tài khoản
+                                    </span>
+
+                                </div>
+
+                                <i class="bi bi-chevron-right"></i>
+
+                            </a>
+
+
+                            <a href="posts.html">
+
+                                <div class="quick-action-icon">
+
+                                    <i class="bi bi-newspaper"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Quản lý bài viết
+                                    </strong>
+
+                                    <span>
+                                        Thêm và cập nhật bài viết
+                                    </span>
+
+                                </div>
+
+                                <i class="bi bi-chevron-right"></i>
+
+                            </a>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </section>
+
+
+
+                <!-- ================= PRODUCTS ================= -->
+
+                <section class="admin-panel mt-4">
+
+
+                    <div class="admin-panel-header">
+
+                        <div>
+
+                            <h3>
+                                Sản phẩm nổi bật
+                            </h3>
+
+                            <p>
+                                Các sản phẩm có lượt xem cao
+                            </p>
+
+                        </div>
+
+
+                        <a href="products.html">
+
+                            Quản lý sản phẩm
+
+                            <i class="bi bi-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+
+                    <div id="dashboardProducts" class="dashboard-products">
+                        <!-- JS -->
+                    </div>
+
+
+                </section>
+
+
+            </main>
+
+
+        </div>
+
+
+    </div>
+
+
+    <div class="admin-sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/admin/auth.js"></script>
+    <script src="../js/admin/dashboard.js"></script>
+
+
+</body>
+
+</html>

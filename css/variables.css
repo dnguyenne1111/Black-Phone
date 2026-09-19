@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+:root {
+    /* ===== MÀU CHÍNH ===== */
+    --primary-color: #111827;
+    --primary-hover: #1f2937;
+
+    --accent-color: #2563eb;
+    --accent-hover: #1d4ed8;
+
+    /* ===== MÀU NỀN ===== */
+    --bg-color: #f6f7fb;
+    --surface-color: #ffffff;
+    --dark-color: #111827;
+
+    /* ===== MÀU CHỮ ===== */
+    --text-color: #111827;
+    --text-muted: #6b7280;
+    --text-light: #ffffff;
+
+    /* ===== BORDER ===== */
+    --border-color: #e5e7eb;
+
+    /* ===== TRẠNG THÁI ===== */
+    --success-color: #16a34a;
+    --danger-color: #dc2626;
+    --warning-color: #f59e0b;
+
+    /* ===== BO GÓC ===== */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --radius-xl: 24px;
+
+    /* ===== SHADOW ===== */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 20px 45px rgba(0, 0, 0, 0.12);
+
+    /* ===== TRANSITION ===== */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+
+    /* ===== KHOẢNG CÁCH ===== */
+    --section-spacing: 80px;
+
+    /* ===== FONT ===== */
+    --font-main: "Inter", Arial, Helvetica, sans-serif;
+}
